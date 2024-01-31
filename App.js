@@ -9,6 +9,8 @@ import CounterScreen from './src/screens/CounterScreen';
 import BoxScreen from './src/screens/BoxScreen';
 import TrySomething from './src/screens/TrySomething';
 import ChangeBoxColor from './src/screens/ChangeBoxColor';
+import PasswordScreen from './src/screens/PasswordScreen';
+import DesignScreen from './src/screens/DesignScreen';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -25,6 +27,8 @@ export default function App() {
         <Stack.Screen name="Random Box App" component={BoxScreen} />
         <Stack.Screen name="Change Color Box" component={ChangeBoxColor} />
         <Stack.Screen name="Try Something" component={TrySomething} />
+        <Stack.Screen name="Password" component={PasswordScreen} />
+        <Stack.Screen name="Design" component={DesignScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

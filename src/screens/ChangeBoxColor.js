@@ -6,23 +6,23 @@ const reducer = (state, action) => {
   console.log("STATE :", state);
   switch (action.type) {
     case "ChangeRed":
-        if(state.r + action.payload <= 255 && state.r + action.payload >= 0){
-            return { ...state, r: state.r + action.payload };
-        }
-        console.log("Lütfen Red değerini 0 ile 255 arasında giriniz !");
-        return state
+      if (state.r + action.payload <= 255 && state.r + action.payload >= 0) {
+        return { ...state, r: state.r + action.payload };
+      }
+      console.log("Lütfen Red değerini 0 ile 255 arasında giriniz !");
+      return state
     case "ChangeGreen":
-        if(state.g + action.payload <= 255 && state.g + action.payload >= 0){
-            return { ...state, g: state.g + action.payload };
-        }
-        console.log("Lütfen Green değerini 0 ile 255 arasında giriniz !");
-        return state
+      if (state.g + action.payload <= 255 && state.g + action.payload >= 0) {
+        return { ...state, g: state.g + action.payload };
+      }
+      console.log("Lütfen Green değerini 0 ile 255 arasında giriniz !");
+      return state
     case "ChangeBlue":
-        if(state.b + action.payload <= 255 && state.b + action.payload >= 0){
-            return { ...state, b: state.b + action.payload };
-        }
-        console.log("Lütfen Blue değerini 0 ile 255 arasında giriniz !");
-        return state
+      if (state.b + action.payload <= 255 && state.b + action.payload >= 0) {
+        return { ...state, b: state.b + action.payload };
+      }
+      console.log("Lütfen Blue değerini 0 ile 255 arasında giriniz !");
+      return state
     default:
       return state;
   }
@@ -34,11 +34,12 @@ export default function ChangeBoxColor() {
 
   return (
     <View>
-        <ColorChange color="Kırmızı" onIncrease={() => dispatch({ type: "ChangeRed", payload: 10 })} onDecrease={() => dispatch({ type: "ChangeRed", payload: -10 })}/>
-        <ColorChange color="Yeşil" onIncrease={() => dispatch({ type: "ChangeGreen", payload: 10 })} onDecrease={() => dispatch({ type: "ChangeGreen", payload: -10 })}/>
-        <ColorChange color="Mavi" onIncrease={() => dispatch({ type: "ChangeBlue", payload: 10 })} onDecrease={() => dispatch({ type: "ChangeBlue", payload: -10 })}/>
-     
-      
+      <View style={styles.buttonList}>
+        <ColorChange color='red' colorText="Kırmızı" onIncrease={() => dispatch({ type: "ChangeRed", payload: 17 })} onDecrease={() => dispatch({ type: "ChangeRed", payload: -17 })} />
+        <ColorChange color='green' colorText="Yeşil" onIncrease={() => dispatch({ type: "ChangeGreen", payload: 17 })} onDecrease={() => dispatch({ type: "ChangeGreen", payload: -17 })} />
+        <ColorChange color='blue' colorText="Mavi" onIncrease={() => dispatch({ type: "ChangeBlue", payload: 17 })} onDecrease={() => dispatch({ type: "ChangeBlue", payload: -17 })} />
+      </View>
+
       <View
         style={{
           height: 150,
@@ -51,4 +52,9 @@ export default function ChangeBoxColor() {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  buttonList: {
+    display: 'flex',
+    gap: 1,
+  }
+});
